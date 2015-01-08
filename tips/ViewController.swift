@@ -8,23 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+public class ViewController: UIViewController, UITextFieldDelegate {
 
-  @IBOutlet weak var billField: UITextField!
-  @IBOutlet weak var tipLabel: UILabel!
-  @IBOutlet weak var totalLabel: UILabel!
-  @IBOutlet weak var tipControl: UISegmentedControl!
+  @IBOutlet public weak var billField: UITextField!
+  @IBOutlet public weak var tipLabel: UILabel!
+  @IBOutlet public weak var totalLabel: UILabel!
+  @IBOutlet public weak var tipControl: UISegmentedControl!
 
-  override func viewDidLoad() {
+  override public func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-
-    billField.text = "Hello"
-  }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
 
   @IBAction func onEditingChanged(sender: AnyObject) {
