@@ -1,0 +1,11 @@
+machine:
+  environment:
+    XCODE_WORKSPACE: 'tips.xcworkspace'
+    XCODE_SCHEME: 'tips'
+dependencies:
+  pre:
+    - gem install cocoapods --pre
+    - pod install
+test:
+  override:
+    - xctool -scheme 'tips' -workspace tips.xcworkspace -sdk iphonesimulator8.1 clean build-tests run-tests
