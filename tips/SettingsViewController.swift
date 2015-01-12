@@ -13,6 +13,8 @@ class SettingsViewController: UIViewController {
   @IBOutlet weak var tipPercentOne: UITextField!
   @IBOutlet weak var tipPercentTwo: UITextField!
   @IBOutlet weak var tipPercentThree: UITextField!
+  @IBOutlet weak var percentages: UIView!
+
   var textFields: Array<UITextField!> {
     return [ tipPercentOne, tipPercentTwo, tipPercentThree ]
   }
@@ -25,6 +27,14 @@ class SettingsViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     load()
+    percentages.layer.masksToBounds = true
+    percentages.layer.borderWidth = 1
+    percentages.layer.borderColor = UIColor.whiteColor().CGColor
+    percentages.layer.cornerRadius = 5
+    tipPercentOne.layer.borderWidth = 1
+    tipPercentOne.layer.borderColor = UIColor.whiteColor().CGColor
+    tipPercentThree.layer.borderWidth = 1
+    tipPercentThree.layer.borderColor = UIColor.whiteColor().CGColor
   }
 
   @IBAction func close() {

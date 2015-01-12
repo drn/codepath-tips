@@ -17,6 +17,7 @@ public class ViewController: UIViewController, UITextFieldDelegate {
   @IBOutlet public weak var tipLabel: UILabel!
   @IBOutlet public weak var totalLabel: UILabel!
   @IBOutlet public weak var tipControl: UISegmentedControl!
+  @IBOutlet public weak var infoView: UIView!
 
   let tipPercentageKeys: Array<String> = [
     "tip_percentage_one", "tip_percentage_two", "tip_percentage_three"
@@ -28,6 +29,7 @@ public class ViewController: UIViewController, UITextFieldDelegate {
     super.viewDidLoad()
     updateTipPercentages()
     addObservers()
+    billField.becomeFirstResponder()
   }
 
   deinit {
@@ -37,6 +39,7 @@ public class ViewController: UIViewController, UITextFieldDelegate {
   // MARK: - IBActions
 
   @IBAction func onBillAmountChanged() {
+    ensureInfoView()
     updateLabels()
   }
 
@@ -45,7 +48,12 @@ public class ViewController: UIViewController, UITextFieldDelegate {
   }
 
   @IBAction func onTap() {
-    billField.endEditing(true)
+    if billField.editing {
+      billField.endEditing(true)
+    }
+    else {
+      billField.becomeFirstResponder()
+    }
   }
 
   // MARK: - UI Update
@@ -57,8 +65,29 @@ public class ViewController: UIViewController, UITextFieldDelegate {
     let tip = billAmount * tipPercentage
     let total = billAmount + tip
 
-    tipLabel.text = String(format: "$%.2f", tip)
-    totalLabel.text = String(format: "$%.2f", tip)
+    tipLabel.text = String(format: "$%.2f Tip", tip)
+    totalLabel.text = String(format: "$%.2f Total", total)
+  }
+
+  private func ensureInfoView() {
+    if billField.text.isEmpty && infoView.alpha == 1 {
+      UIView.animateWithDuration(0.2, animations: {
+        self.infoView.alpha = 0
+        let frame = self.billField.frame
+        self.billField.frame = CGRectMake(
+          frame.origin.x, 200, frame.width, frame.height
+        )
+      })
+    }
+    if !billField.text.isEmpty && infoView.alpha == 0 {
+      UIView.animateWithDuration(0.2, animations: {
+        self.infoView.alpha = 1
+        let frame = self.billField.frame
+        self.billField.frame = CGRectMake(
+          frame.origin.x, 80, frame.width, frame.height
+        )
+      })
+    }
   }
 
   // MARK: State Update
