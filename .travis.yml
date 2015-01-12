@@ -1,0 +1,11 @@
+language: objective-c
+cache:
+  directories:
+    - Pods
+before_install:
+  - export LC_ALL="en_US.UTF-8"
+  - brew update
+  - brew upgrade xctool 2>/dev/null; true
+  - gem install --no-ri --no-rdoc cocoapods --pre
+script:
+  - rake clean; rake test

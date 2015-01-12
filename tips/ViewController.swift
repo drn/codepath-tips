@@ -38,7 +38,7 @@ public class ViewController: UIViewController, UITextFieldDelegate {
 
   // MARK: - IBActions
 
-  @IBAction func onBillAmountChanged() {
+  @IBAction public func onBillAmountChanged() {
     ensureInfoView()
     updateLabels()
   }

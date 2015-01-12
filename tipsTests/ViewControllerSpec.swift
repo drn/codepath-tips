@@ -23,17 +23,27 @@ class ViewControllerSpec: QuickSpec {
     }
 
     describe("ui defaults") {
-      it("defaults bill field to 0") {
-        println(viewController.billField.text)
-        expect(viewController.billField.text).to(equal("0"))
+      it("defaults bill field to empty string") {
+        expect(viewController.billField.text).to(equal(""))
       }
-      it("defaults tip label to $0.00") {
-        println(viewController.tipLabel.text)
-        expect(viewController.tipLabel.text).to(equal("$0.00"))
+      it("defaults tip label to '$0.00 Tip'") {
+        expect(viewController.tipLabel.text).to(equal("$0.00 Tip"))
       }
-      it("defaults total label to $0.00") {
-        println(viewController.totalLabel.text)
-        expect(viewController.totalLabel.text).to(equal("$0.00"))
+      it("defaults total label to '$0.00 Total'") {
+        expect(viewController.totalLabel.text).to(equal("$0.00 Total"))
+      }
+    }
+
+    describe("changes to bill field") {
+      beforeEach {
+        viewController.billField.text = "100"
+        viewController.onBillAmountChanged()
+      }
+      it("changes tip label to '$18.00 Tip'") {
+        expect(viewController.tipLabel.text).to(equal("$18.00 Tip"))
+      }
+      it("changes total label to '$118.00 Total'") {
+        expect(viewController.totalLabel.text).to(equal("$118.00 Total"))
       }
     }
 

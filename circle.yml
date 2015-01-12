@@ -8,4 +8,4 @@ dependencies:
     - pod install
 test:
   override:
-    - xctool -scheme 'tips' -workspace tips.xcworkspace -sdk iphonesimulator8.1 clean build-tests run-tests
+    - rake clean; rake test

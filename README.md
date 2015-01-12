@@ -1,4 +1,6 @@
 # iOS Tip Calculator built in Swift
+
+[![Build Status](https://travis-ci.org/drn/codepath-tips.svg)](https://travis-ci.org/drn/codepath-tips)
 [![Circle CI](https://circleci.com/gh/drn/codepath-tips.svg?style=svg)](https://circleci.com/gh/drn/codepath-tips) - **Note: Circle-CI doesn't yet support Cocoapods Beta**
 
 Swift Codepath Course Prework
@@ -23,11 +25,17 @@ This simple Swift iOS app provides an easy way to calculate tip.
   * UI animations (as seen in walkthrough gif)
   * Implemented specs via the Quick testing framework
 
-## Testing Dependencies
+## Tests
 
+Dependencies can be installed with:
 ```
 gem install cocoapods --pre
 pod install
+```
+
+Tests can be run with:
+```
+rake test
 ```
 
 ## Dependencies Used
