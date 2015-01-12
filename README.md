@@ -3,3 +3,4 @@
 
 Swift Codepath Course Prework
 
+![Walkthrough](walkthrough.gif)
