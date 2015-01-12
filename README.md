@@ -3,6 +3,10 @@
 
 Swift Codepath Course Prework
 
+## Background
+
+This simple Swift iOS app provides an easy way to calculate tip.
+
 ## Walthrough
 
 ![Walkthrough](walkthrough.gif)
@@ -18,3 +22,18 @@ Swift Codepath Course Prework
     * KVO of settings
   * UI animations (as seen in walkthrough gif)
   * Implemented specs via the Quick testing framework
+
+## Testing Dependencies
+
+```
+gem install cocoapods --pre
+pod install
+```
+
+## Dependencies Used
+
+* [Quick](https://github.com/Quick/Quick)
+
+## License
+
+This project is licensed under the [MIT License](http://opensource.org/licenses/MIT)
