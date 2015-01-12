@@ -1,7 +1,7 @@
 # iOS Tip Calculator built in Swift
 
 [![Build Status](https://travis-ci.org/drn/codepath-tips.svg)](https://travis-ci.org/drn/codepath-tips)
-[![Circle CI](https://circleci.com/gh/drn/codepath-tips.svg?style=svg)](https://circleci.com/gh/drn/codepath-tips) - **Note: Circle-CI doesn't yet support Cocoapods Beta**
+[![Circle CI](https://circleci.com/gh/drn/codepath-tips.svg?style=svg)](https://circleci.com/gh/drn/codepath-tips)
 
 Swift Codepath Course Prework
 

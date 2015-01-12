@@ -2,9 +2,10 @@ machine:
   environment:
     XCODE_WORKSPACE: 'tips.xcworkspace'
     XCODE_SCHEME: 'tips'
+    LANG: en_US.UTF-8
 dependencies:
   pre:
-    - gem install cocoapods --pre
+    - sudo gem install cocoapods --pre
     - pod install
 test:
   override:
